@@ -1,0 +1,42 @@
+// GET THINGS
+    kubectl get services
+    kubectl get pod
+    kubectl get nodes
+    kubectl get deployments
+
+// CREATE
+    PODS ARE NOT MANUALLY CREATED
+    WE MANAGE THAT THROUGH DEPLOYMENTS
+
+    kubectl create deployment NAME --image=IMAGE
+
+// EDIT DEPLOYMENT FILE
+    WE CAN FREELY EDIT AN EXISTING DEPLOYMENT FILE
+    WHEN THE DEPLOYMENT FILE IS SAVED
+        THE OLD INSTANCE IS AUTOMATICALLY TERMINATED
+        AND A NEW ONE IS CREATED
+
+    kubectl edit deployment nginx-depl
+
+// INSPECT INSTANCE LOGS
+    kubectl logs INSTANCE_HASH
+
+// INTERACTIVE TERMINAL FOR POD
+    kubectl exec -it INSTANCE_HASH
+
+// DELETE DEPLOYMENTS
+    kubectl delete DEPL_NAME
+
+// APPLY
+    INSTEAD OF MANUALLY DOING CHANGES/DEPLOYMENTS
+    WE CAN JUST APPLY CHANGES VIA A YAML FILE
+
+    kubectl apply -f FILEPATH
+
+// DESCRIBE SERVICE
+    kubectl describe service SERV_NAME
+
+// GENERATE DEPLOYMENT DUMP FILE
+    SNAPSHOT CURRENT BRAIN CONFIG
+
+    kubectl get deployment DEPL_NAME -o yaml > filepath
