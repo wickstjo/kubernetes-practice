@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: private-vars
+
+# DEFAULT KEY-VALUE SECRET TYPE
+type: Opaque
+data:
+
+    # MONGO-DB CREDENTIALS IN BASE64
+    db-username: dXNlcm5hbWU=
+    db-password: cGFzc3dvcmQ=

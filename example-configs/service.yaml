@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Service
-
-# SERVICE NAME ETC
 metadata:
     name: nginx-service
 
 # SERVICE PROPS
 spec:
     selector:
+    
+        # THIS NEEDS TO MATCH THE POD (DEPL) LABEL
         app: nginx
     ports:
         -   protocol: TCP
 
-            # SERVICE IS AVAILABLE AT PORT
+            # SERVICE PORT
             port: 80
 
-            # WHAT PORT IS THE POD LISTEN AT
+            # POD PORT
             targetPort: 8080

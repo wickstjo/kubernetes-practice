@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: mongo-vars
+
+# KEY-VALUE DATA
+data:
+    db-username: dXNlcm5hbWU=
+    db-password: cGFzc3dvcmQ=

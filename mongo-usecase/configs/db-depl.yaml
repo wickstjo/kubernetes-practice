@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: db-depl
+    labels:
+        app: db-depl
+
+# DEPLOYMENT SPECS
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: db-depl
+
+    # POD BLUEPRINT
+    template:
+        metadata:
+            labels:
+                app: db-depl
+        spec:
+            containers:
+                -   name: db-depl
+                    image: mongo
+                    ports:
+                        - containerPort: 27017
+                    env:
+                        # DB USERNAME
+                        -   name: MONGO_INITDB_ROOT_USERNAME
+                            valueFrom:
+                                secretKeyRef:
+                                    name: private-vars
+                                    key: db-username
+                        # DB PASSWORD
+                        -   name: MONGO_INITDB_ROOT_PASSWORD
+                            valueFrom:
+                                secretKeyRef:
+                                    name: private-vars
+                                    key: db-password

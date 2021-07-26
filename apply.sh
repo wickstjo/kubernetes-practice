@@ -7,5 +7,5 @@ if [ -z "$1" ]
     
     # RUN CONTAINER & MOUNT DIR
     else
-        kubectl apply -f configs/$1.yaml
+        kubectl apply -f example-configs/$1.yaml
 fi
