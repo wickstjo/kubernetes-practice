@@ -1,0 +1,4 @@
+TO MAKE foo-dashboard.com RESPOND LOCALLY,
+ADD THIS TO THE /etc/hosts FILE
+
+192.168.49.2        foo-dashboard.com

@@ -20,9 +20,7 @@ spec:
         # POD SPECS
         spec:
             containers:
-                -   name: nginx
-                    # IMAGE 
+                -   name: pod
                     image: nginx:1.16
-                    # PORT CONFIG
                     ports:
                         - containerPort: 8080

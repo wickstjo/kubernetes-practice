@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name: mongo-vars
+    name: public-vars
 
 # KEY-VALUE DATA
 data:

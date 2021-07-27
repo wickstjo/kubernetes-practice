@@ -1,28 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: db-depl
+    name: db-deployment
     labels:
-        app: db-depl
+        app: db-deployment
 
 # DEPLOYMENT SPECS
 spec:
     replicas: 1
     selector:
         matchLabels:
-            app: db-depl
+            app: db-deployment
 
     # POD BLUEPRINT
     template:
         metadata:
             labels:
-                app: db-depl
+                app: db-deployment
         spec:
             containers:
-                -   name: db-depl
+                -   name: db-pod
                     image: mongo
                     ports:
                         - containerPort: 27017
+                        
+                    # ENVIRONMENT VARIABLES FOR MONGO DB
                     env:
                         # DB USERNAME
                         -   name: MONGO_INITDB_ROOT_USERNAME

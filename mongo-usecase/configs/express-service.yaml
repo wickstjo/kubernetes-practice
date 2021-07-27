@@ -1,20 +1,25 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: express-serv
+    name: express-service
 
 # SERVICE PROPS
 spec:
     selector:
-        app: express-depl
+        app: express-deployment
+
     # MAKE THE SERVICE EXTERNAL
+    # ALSO REQUIRES THE NODEPORT BELOW
     type: LoadBalancer
     ports:
         -   protocol: TCP
+        
             # SERVICE PORT
             port: 8081
+
             # POD PORT
             targetPort: 8081
+
             # EXTERNALLY AVAILABLE PORT
             # HAS A RANGE BETWEEN 30K-32767
             nodePort: 30000

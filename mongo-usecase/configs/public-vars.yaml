@@ -5,4 +5,4 @@ metadata:
 
 # KEY-VALUE DATA
 data:
-    db-server: db-serv
+    db-server: db-service

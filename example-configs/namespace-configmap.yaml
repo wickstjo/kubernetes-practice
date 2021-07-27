@@ -1,11 +1,10 @@
 apiVersion: v1
-kind: Secret
+kind: ConfigMap
 metadata:
-    name: db-secret
+    name: public-vars
+    namespace: foobar
 
-# DEFAULT KEY-VALUE SECRET TYPE
-type: Opaque
+# KEY-VALUE DATA
 data:
-
     db-username: dXNlcm5hbWU=
     db-password: cGFzc3dvcmQ=

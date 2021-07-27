@@ -1,28 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: express-depl
+    name: express-deployment
     labels:
-        app: express-depl
+        app: express-deployment
 
 # DEPLOYMENT SPECS
 spec:
     replicas: 1
     selector:
         matchLabels:
-            app: express-depl
+            app: express-deployment
 
     # POD BLUEPRINT
     template:
         metadata:
             labels:
-                app: express-depl
+                app: express-deployment
         spec:
             containers:
-                -   name: express-depl
+                -   name: express-pod
                     image: mongo-express
                     ports:
                         - containerPort: 8081
+
+                    # ENVIRONMENT VARIABLES FOR MONGO EXPRESS
                     env:
                         # DB USERNAME
                         -   name: ME_CONFIG_MONGODB_ADMINUSERNAME
